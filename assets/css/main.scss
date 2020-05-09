@@ -60,7 +60,8 @@ body {
 			background-repeat: no-repeat;
 			background-position: center center;
 		}
-		#grid, .side-menu-nav-toggle {
+    #blog,#contact,#about-me,
+    .side-menu-nav-toggle {
 			top: 0;
 			@include translateX(270px);
 		}
