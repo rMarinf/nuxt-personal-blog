@@ -1,9 +1,15 @@
 <template>
   <nav id="side-menu-main" role="navigation">
     <ul>
-      <li class="active"><a href="travel.html">Blog</a></li>
-      <li><a href="lifestyle.html">Sobre mí</a></li>
-      <li><a href="about.html">Contacto</a></li>
+      <li>
+        <nuxt-link to="/">Blog</nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/about">Sobre mí</nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/contact">Contacto</nuxt-link>
+      </li>
     </ul>
   </nav>
 </template>

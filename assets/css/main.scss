@@ -204,20 +204,18 @@ h1, h2, h3, h4, h5,
 							transform: scaleX(1);
 						}
 					}
-				}
-				&.active {
-					font-weight: 600;
-					a {
-						color: $white;
-						&:after {
-							visibility: visible;
-							-webkit-transform: scaleX(1);
-							-moz-transform: scaleX(1);
-							-ms-transform: scaleX(1);
-							-o-transform: scaleX(1);
-							transform: scaleX(1);
-						}
-					}
+          &.nuxt-link-exact-active {
+            font-weight: 600;
+            color: $white;
+            &:after {
+              visibility: visible;
+              -webkit-transform: scaleX(1);
+              -moz-transform: scaleX(1);
+              -ms-transform: scaleX(1);
+              -o-transform: scaleX(1);
+              transform: scaleX(1);
+            }
+          }
 				}
 			}
 		}
@@ -285,7 +283,7 @@ h1, h2, h3, h4, h5,
 	}
 }
 
-#grid {
+#blog, #about-me, #contact {
 	width: 100%;
 	float: right;
 	@include transition(.5s);
