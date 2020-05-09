@@ -1,5 +1,5 @@
 <template>
-  <div class="side-menu">
+  <div class="side-menu" v-click-outside="closeMobileMenu">
     <a
       href="#"
       class="side-menu-nav-toggle"
@@ -8,7 +8,13 @@
     >
       <i></i>
     </a>
-    <aside id="side-menu-aside" class="img">
+    <aside
+      id="side-menu-aside"
+      class="img"
+      :style="{
+        backgroundImage: 'url(' + backgroundImageUrl + ')'
+      }"
+    >
       <h1 id="side-menu-logo" class="mb-4"><a href="index.html">Blog</a></h1>
       <nav id="side-menu-main" role="navigation">
         <ul>
@@ -48,11 +54,18 @@
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
+import backgroundImageUrl from '~/assets/images/sidebar-bg.jpg'
+
 export default {
   name: 'SideMenu',
+  directives: {
+    ClickOutside
+  },
   data() {
     return {
-      isActive: false
+      isActive: false,
+      backgroundImageUrl
     }
   },
   methods: {
@@ -65,6 +78,14 @@ export default {
       } else {
         this.isActive = true
         body.classList.add('offcanvas')
+      }
+    },
+    closeMobileMenu(event) {
+      event.preventDefault()
+      const body = document.body
+      if (body.classList.contains('offcanvas')) {
+        body.classList.remove('offcanvas')
+        this.isActive = false
       }
     }
   }
