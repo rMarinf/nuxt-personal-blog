@@ -1,15 +1,15 @@
 <template>
   <div id="page">
-    <side-menu></side-menu>
+    <the-sidebar></the-sidebar>
     <nuxt />
   </div>
 </template>
 
 <script>
-import SideMenu from '@/components/layout/side-menu'
+import TheSidebar from '@/components/layout/TheSidebar'
 export default {
   name: 'Page',
-  components: { SideMenu }
+  components: { TheSidebar }
 }
 </script>
 <style></style>
