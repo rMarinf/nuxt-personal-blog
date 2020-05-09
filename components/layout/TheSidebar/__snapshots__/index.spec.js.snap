@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheSidebar Render should render component 1`] = `
+<div
+  class="side-menu"
+>
+  <a
+    class="side-menu-nav-toggle"
+    href="#"
+  >
+    <i />
+  </a>
+   
+  <aside
+    class="img"
+    id="side-menu-aside"
+    style="background-image: url();"
+  >
+    <the-sidebar-navigation-stub />
+     
+    <the-sidebar-footer-stub />
+  </aside>
+</div>
+`;
+
+exports[`TheSidebar Render should render component with active class 1`] = `
+<div
+  class="side-menu"
+>
+  <a
+    class="side-menu-nav-toggle active"
+    href="#"
+  >
+    <i />
+  </a>
+   
+  <aside
+    class="img"
+    id="side-menu-aside"
+    style="background-image: url();"
+  >
+    <the-sidebar-navigation-stub />
+     
+    <the-sidebar-footer-stub />
+  </aside>
+</div>
+`;

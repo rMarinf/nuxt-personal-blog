@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blog 1`] = `
+<div
+  id="blog"
+>
+  
+  BLOG
+
+</div>
+`;
