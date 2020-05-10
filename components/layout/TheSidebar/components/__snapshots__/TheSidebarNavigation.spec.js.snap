@@ -7,27 +7,27 @@ exports[`TheSidebarNavigation 1`] = `
 >
   <ul>
     <li>
-      <nuxt-link
+      <nuxt-link-stub
         to="/"
       >
         Blog
-      </nuxt-link>
+      </nuxt-link-stub>
     </li>
      
     <li>
-      <nuxt-link
+      <nuxt-link-stub
         to="/about"
       >
         Sobre mí
-      </nuxt-link>
+      </nuxt-link-stub>
     </li>
      
     <li>
-      <nuxt-link
+      <nuxt-link-stub
         to="/contact"
       >
         Contacto
-      </nuxt-link>
+      </nuxt-link-stub>
     </li>
   </ul>
 </nav>
