@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DefaultLayout 1`] = `
+<div
+  id="page"
+>
+  <the-sidebar-stub />
+   
+  <nuxt-stub />
+</div>
+`;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheSidebarNavigation 1`] = `
+<nav
+  id="side-menu-main"
+  role="navigation"
+>
+  <ul>
+    <li>
+      <nuxt-link-stub
+        to="/"
+      >
+        Blog
+      </nuxt-link-stub>
+    </li>
+     
+    <li>
+      <nuxt-link-stub
+        to="/about"
+      >
+        Sobre mí
+      </nuxt-link-stub>
+    </li>
+     
+    <li>
+      <nuxt-link-stub
+        to="/contact"
+      >
+        Contacto
+      </nuxt-link-stub>
+    </li>
+  </ul>
+</nav>
+`;

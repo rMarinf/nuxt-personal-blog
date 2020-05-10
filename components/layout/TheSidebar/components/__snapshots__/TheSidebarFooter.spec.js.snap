@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheSidebarFooter 1`] = `
+<div
+  class="side-menu-footer"
+>
+  <div
+    class="mb-4"
+  >
+    <h3>
+      Subscribe for newsletter
+    </h3>
+     
+    <form
+      action="#"
+      class="side-menu-subscribe-form"
+    >
+      <div
+        class="form-group d-flex"
+      >
+        <div
+          class="icon"
+        >
+          <span
+            class="icon-paper-plane"
+          />
+        </div>
+         
+        <input
+          class="form-control"
+          placeholder="Enter Email Address"
+          type="text"
+        />
+      </div>
+    </form>
+  </div>
+   
+  <p
+    class="pfooter"
+  >
+    
+    Copyright ©
+    2020
+    All rights reserved | This template is made with
+    
+    <i
+      aria-hidden="true"
+      class="icon-heart"
+    />
+     by
+    
+    <a
+      href="https://colorlib.com"
+      target="_blank"
+    >
+      Colorlib
+    </a>
+  </p>
+</div>
+`;
