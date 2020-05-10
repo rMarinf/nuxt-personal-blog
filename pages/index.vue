@@ -1,13 +1,32 @@
 <template>
   <div id="blog">
-    <grid></grid>
+    <blog-grid :posts="posts"></blog-grid>
   </div>
 </template>
 
 <script>
-import Grid from '@/components/blog/Grid'
+import BlogGrid from '@/components/blog/BlogGrid'
 export default {
   name: 'Blog',
-  components: { Grid }
+  components: { BlogGrid },
+  asyncData({ app, isDev }) {
+    return app.$storyapi
+      .get('cdn/stories', {
+        version: isDev ? 'draft' : 'published',
+        starts_with: 'blog/'
+      })
+      .then((res) => {
+        return {
+          posts: res.data.stories.map((bp) => {
+            return {
+              id: bp.slug,
+              title: bp.content.title,
+              summary: bp.content.summary,
+              thumbnailUrl: bp.content.thumbnail
+            }
+          })
+        }
+      })
+  }
 }
 </script>

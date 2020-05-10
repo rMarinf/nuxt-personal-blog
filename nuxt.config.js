@@ -61,7 +61,14 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: 'Isih0M24ZdkBFGrNa2r0Xwtt',
+        cacheProvider: 'memory'
+      }
+    ]
   ],
   /*
    ** Axios module configuration
