@@ -23,7 +23,7 @@
 
 <script>
 import ClickOutside from 'vue-click-outside'
-import backgroundImageUrl from '~/assets/images/sidebar-bg.jpg'
+import backgroundImageUrl from '@/assets/images/sidebar-bg.jpg'
 import TheSidebarFooter from '@/components/layout/TheSidebar/components/TheSidebarFooter'
 import TheSidebarNavigation from '@/components/layout/TheSidebar/components/TheSidebarNavigation'
 
