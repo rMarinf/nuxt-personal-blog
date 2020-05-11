@@ -12,7 +12,7 @@ export default {
   asyncData({ app, isDev }) {
     return app.$storyapi
       .get('cdn/stories', {
-        version: isDev ? 'draft' : 'published',
+        version: 'draft', // isDev ? 'draft' : 'published',
         starts_with: 'blog/'
       })
       .then((res) => {
