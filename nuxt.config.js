@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export default {
   mode: 'universal',
   /*
@@ -70,6 +72,19 @@ export default {
       }
     ]
   ],
+  generate: {
+    routes() {
+      return axios
+        .get(
+          'https://api.storyblok.com/v1/cdn/stories?version=draft&token=Isih0M24ZdkBFGrNa2r0Xwtt&starts_with=blog&cv=' +
+            Math.floor(Date.now() / 1e3)
+        )
+        .then((res) => {
+          const blogPosts = res.data.stories.map((bp) => bp.full_slug)
+          return ['/', '/blog', '/about', '/contact', ...blogPosts]
+        })
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
