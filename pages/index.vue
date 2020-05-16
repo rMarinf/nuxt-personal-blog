@@ -20,6 +20,7 @@ export default {
           posts: res.data.stories.map((bp) => {
             return {
               id: bp.slug,
+              publishedAt: bp.created_at,
               title: bp.content.title,
               summary: bp.content.summary,
               thumbnailUrl: bp.content.thumbnail

@@ -13,6 +13,7 @@
             :id="post.id"
             :title="post.title"
             :summary="post.summary"
+            :published-at="parsePublishedDate(post.publishedAt)"
             :thumbnail-image="post.thumbnailUrl"
           ></blog-vertical-post-preview>
 
@@ -22,6 +23,7 @@
                 :id="post.id"
                 :title="post.title"
                 :summary="post.summary"
+                :published-at="parsePublishedDate(post.publishedAt)"
                 :thumbnail-image="post.thumbnailUrl"
               ></blog-horizontal-left-post-preview>
 
@@ -30,6 +32,7 @@
                 :id="posts[index + 1].id"
                 :title="posts[index + 1].title"
                 :summary="posts[index + 1].summary"
+                :published-at="parsePublishedDate(posts[index + 1].publishedAt)"
                 :thumbnail-image="posts[index + 1].thumbnailUrl"
               ></blog-horizontal-right-post-preview>
             </div>
@@ -67,6 +70,14 @@ export default {
     }
   },
   methods: {
+    parsePublishedDate(dateString) {
+      const date = new Date(dateString)
+      return date.toLocaleDateString('es-ES', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+    },
     indexGridClass(index) {
       const page = Math.round(index / this.itemsPerPage)
       const modPage = page % this.templatesPerPage

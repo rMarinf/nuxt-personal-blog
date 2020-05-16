@@ -13,7 +13,7 @@
       </h3>
       <div class="meta-wrap">
         <p class="meta">
-          <span><i class="icon-calendar mr-2"></i>Sept. 10, 2019</span>
+          <span><i class="icon-calendar mr-2"></i>{{ publishedAt }}</span>
         </p>
       </div>
       <p class="mb-4">
@@ -37,6 +37,10 @@ export default {
       required: true
     },
     title: {
+      type: String,
+      required: true
+    },
+    publishedAt: {
       type: String,
       required: true
     },
