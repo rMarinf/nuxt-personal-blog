@@ -9,10 +9,10 @@ import BlogGrid from '@/components/blog/BlogGrid'
 export default {
   name: 'Blog',
   components: { BlogGrid },
-  asyncData({ app }) {
+  asyncData({ app, isDev }) {
     return app.$storyapi
       .get('cdn/stories', {
-        version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
+        version: isDev ? 'published' : 'draft',
         starts_with: 'blog/'
       })
       .then((res) => {
