@@ -1,5 +1,9 @@
 import axios from 'axios'
 
+process.env.NODE_ENV === 'production'
+  ? require('dotenv').config({ path: '.env.prod' })
+  : require('dotenv').config()
+
 export default {
   mode: 'universal',
   /*
@@ -69,7 +73,7 @@ export default {
     [
       'storyblok-nuxt',
       {
-        accessToken: 'Isih0M24ZdkBFGrNa2r0Xwtt',
+        accessToken: process.env.STORYBLOK_TOKEN,
         cacheProvider: 'memory'
       }
     ]
@@ -78,8 +82,11 @@ export default {
     routes() {
       return axios
         .get(
-          'https://api.storyblok.com/v1/cdn/stories?version=draft&token=Isih0M24ZdkBFGrNa2r0Xwtt&starts_with=blog&cv=' +
-            Math.floor(Date.now() / 1e3)
+          `https://api.storyblok.com/v1/cdn/stories?version=${
+            process.env.STORYBLOK_VERSION
+          }&token=${
+            process.env.STORYBLOK_TOKEN
+          }&starts_with=blog&cv=${Math.floor(Date.now() / 1e3)}`
         )
         .then((res) => {
           const blogPosts = res.data.stories.map((bp) => bp.full_slug)
