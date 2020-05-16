@@ -1,3 +1,9 @@
+import axios from 'axios'
+
+process.env.NODE_ENV === 'production'
+  ? require('dotenv').config({ path: '.env.prod' })
+  : require('dotenv').config()
+
 export default {
   mode: 'universal',
   /*
@@ -49,6 +55,8 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
+    // Doc: https://github.com/Developmint/nuxt-purgecss
+    'nuxt-purgecss',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
@@ -61,8 +69,31 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: process.env.STORYBLOK_TOKEN,
+        cacheProvider: 'memory'
+      }
+    ]
   ],
+  generate: {
+    routes() {
+      return axios
+        .get(
+          `https://api.storyblok.com/v1/cdn/stories?version=${
+            process.env.STORYBLOK_VERSION
+          }&token=${
+            process.env.STORYBLOK_TOKEN
+          }&starts_with=blog&cv=${Math.floor(Date.now() / 1e3)}`
+        )
+        .then((res) => {
+          const blogPosts = res.data.stories.map((bp) => bp.full_slug)
+          return ['/', '/blog', '/about', '/contact', ...blogPosts]
+        })
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
