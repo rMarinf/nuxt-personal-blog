@@ -66,6 +66,8 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    // Doc: https://markdown-it.github.io/
+    '@nuxtjs/markdownit',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
@@ -99,6 +101,12 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /**
+   * MarkdownIt configuration
+   */
+  markdownit: {
+    injected: true
+  },
   /*
    ** Build configuration
    */

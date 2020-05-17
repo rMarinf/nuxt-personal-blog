@@ -12,7 +12,7 @@ export default {
   asyncData({ app, isDev }) {
     return app.$storyapi
       .get('cdn/stories', {
-        version: isDev ? 'published' : 'draft',
+        version: !isDev ? 'published' : 'draft',
         starts_with: 'blog/'
       })
       .then((res) => {
@@ -23,7 +23,7 @@ export default {
               publishedAt: bp.created_at,
               title: bp.content.title,
               summary: bp.content.summary,
-              thumbnailUrl: bp.content.thumbnail
+              thumbnailUrl: bp.content.image
             }
           })
         }
