@@ -46,7 +46,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/main.scss'],
+  css: [
+    '@/assets/css/main.scss',
+    { src: '~/node_modules/highlight.js/styles/atom-one-dark.css', lang: 'css' }
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -66,6 +69,8 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    // Doc: https://markdown-it.github.io/
+    '@nuxtjs/markdownit',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
@@ -99,6 +104,15 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /**
+   * MarkdownIt configuration
+   */
+  markdownit: {
+    injected: true,
+    preset: 'default',
+    linkify: true,
+    use: ['markdown-it-highlightjs']
+  },
   /*
    ** Build configuration
    */

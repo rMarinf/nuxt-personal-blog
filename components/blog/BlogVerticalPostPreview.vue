@@ -1,7 +1,7 @@
 <template>
   <div class="blog-entry">
     <nuxt-link
-      to="single.html"
+      :to="'post/' + id"
       class="img"
       :style="{
         backgroundImage: 'url(' + thumbnailImage + ')'
@@ -9,7 +9,7 @@
     ></nuxt-link>
     <div class="text p-4">
       <h3 class="mb-2">
-        <nuxt-link to="single.html">{{ title }}</nuxt-link>
+        <nuxt-link :to="'post/' + id">{{ title }}</nuxt-link>
       </h3>
       <div class="meta-wrap">
         <p class="meta">
@@ -20,9 +20,9 @@
         {{ summary }}
       </p>
       <p>
-        <a href="#" class="btn-custom"
+        <nuxt-link :to="'post/' + id" class="btn-custom"
           >Read More <span class="ion-ios-arrow-forward"></span
-        ></a>
+        ></nuxt-link>
       </p>
     </div>
   </div>

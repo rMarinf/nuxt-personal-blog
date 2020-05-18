@@ -60,7 +60,7 @@ body {
 			background-repeat: no-repeat;
 			background-position: center center;
 		}
-    #blog,#contact,#about-me,
+    #blog,#contact,#about-me,#post-detail,
     .side-menu-nav-toggle {
 			top: 0;
 			@include translateX(270px);
@@ -284,7 +284,7 @@ h1, h2, h3, h4, h5,
 	}
 }
 
-#blog, #about-me, #contact {
+#blog, #about-me, #contact, #post-detail {
 	width: 100%;
 	float: right;
 	@include transition(.5s);

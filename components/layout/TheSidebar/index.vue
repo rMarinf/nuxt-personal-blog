@@ -15,6 +15,7 @@
         backgroundImage: 'url(' + backgroundImageUrl + ')'
       }"
     >
+      <!--      <img src="~/assets/images/logo.webp" />-->
       <the-sidebar-navigation></the-sidebar-navigation>
       <the-sidebar-footer></the-sidebar-footer>
     </aside>
