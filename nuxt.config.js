@@ -46,7 +46,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/main.scss'],
+  css: [
+    '@/assets/css/main.scss',
+    { src: '~/node_modules/highlight.js/styles/atom-one-dark.css', lang: 'css' }
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -105,7 +108,10 @@ export default {
    * MarkdownIt configuration
    */
   markdownit: {
-    injected: true
+    injected: true,
+    preset: 'default',
+    linkify: true,
+    use: ['markdown-it-highlightjs']
   },
   /*
    ** Build configuration
