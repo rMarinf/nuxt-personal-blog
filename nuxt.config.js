@@ -46,10 +46,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    '@/assets/css/main.scss',
-    { src: '~/node_modules/highlight.js/styles/atom-one-dark.css', lang: 'css' }
-  ],
+  css: ['@/assets/css/main.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -112,6 +109,12 @@ export default {
     preset: 'default',
     linkify: true,
     use: ['markdown-it-highlightjs']
+  },
+  /**
+   * PurgeCSS
+   */
+  purgeCSS: {
+    whitelistPatterns: [/hljs*/]
   },
   /*
    ** Build configuration
