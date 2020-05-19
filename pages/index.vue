@@ -12,8 +12,8 @@ export default {
   asyncData({ app, isDev }) {
     return app.$storyapi
       .get('cdn/stories', {
-        version: !isDev ? 'published' : 'draft',
-        starts_with: 'blog/'
+        version: process.env.STORYBLOK_VERSION,
+        starts_with: 'post/'
       })
       .then((res) => {
         return {

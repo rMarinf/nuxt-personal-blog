@@ -91,11 +91,11 @@ export default {
             process.env.STORYBLOK_VERSION
           }&token=${
             process.env.STORYBLOK_TOKEN
-          }&starts_with=blog&cv=${Math.floor(Date.now() / 1e3)}`
+          }&starts_with=post&cv=${Math.floor(Date.now() / 1e3)}`
         )
         .then((res) => {
           const blogPosts = res.data.stories.map((bp) => bp.full_slug)
-          return ['/', '/blog', '/about', '/contact', ...blogPosts]
+          return ['/', '/about', '/contact', ...blogPosts]
         })
     }
   },
