@@ -46,10 +46,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    '@/assets/css/main.scss',
-    { src: '~/node_modules/highlight.js/styles/atom-one-dark.css', lang: 'css' }
-  ],
+  css: ['@/assets/css/main.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -91,11 +88,11 @@ export default {
             process.env.STORYBLOK_VERSION
           }&token=${
             process.env.STORYBLOK_TOKEN
-          }&starts_with=blog&cv=${Math.floor(Date.now() / 1e3)}`
+          }&starts_with=post&cv=${Math.floor(Date.now() / 1e3)}`
         )
         .then((res) => {
           const blogPosts = res.data.stories.map((bp) => bp.full_slug)
-          return ['/', '/blog', '/about', '/contact', ...blogPosts]
+          return ['/', '/about', '/contact', ...blogPosts]
         })
     }
   },
@@ -112,6 +109,12 @@ export default {
     preset: 'default',
     linkify: true,
     use: ['markdown-it-highlightjs']
+  },
+  /**
+   * PurgeCSS
+   */
+  purgeCSS: {
+    whitelistPatterns: [/hljs*/]
   },
   /*
    ** Build configuration

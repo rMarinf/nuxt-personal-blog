@@ -11,8 +11,8 @@ export default {
   components: { PostDetail },
   asyncData({ app, isDev, params }) {
     return app.$storyapi
-      .get('cdn/stories/blog/' + params.postId, {
-        version: isDev ? 'draft' : 'published'
+      .get('cdn/stories/post/' + params.postId, {
+        version: process.env.STORYBLOK_VERSION
       })
       .then((res) => {
         return {
