@@ -20,29 +20,12 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap'
-      }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: '~/components/layout/TheCustomLoading.vue',
   /*
    ** Global CSS
    */
@@ -66,6 +49,8 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    // Doc: https://github.com/Developmint/nuxt-webfontloader
+    'nuxt-webfontloader',
     // Doc: https://markdown-it.github.io/
     '@nuxtjs/markdownit',
     // Doc: https://axios.nuxtjs.org/usage
@@ -115,6 +100,26 @@ export default {
    */
   purgeCSS: {
     whitelistPatterns: [/hljs*/]
+  },
+  /**
+   * Web font loader configuration
+   */
+  webfontloader: {
+    // add Google Fonts as "custom" | workaround required
+    custom: {
+      families: [
+        'Poppins:300,400,500,600,700',
+        'Lora:400,400i,700,700i',
+        'Abril+Fatface'
+      ],
+      urls: [
+        // for each Google Fonts add url + options you want
+        // here add font-display option
+        'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700',
+        'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap',
+        'https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap'
+      ]
+    }
   },
   /*
    ** Build configuration
